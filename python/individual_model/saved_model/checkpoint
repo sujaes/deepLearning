@@ -1,0 +1,2 @@
+model_checkpoint_path: "woojae_model.ckpt"
+all_model_checkpoint_paths: "woojae_model.ckpt"

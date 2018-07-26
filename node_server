@@ -1,0 +1,74 @@
+
+const express = require('express');
+const app = express();
+
+var PythonShell = require('python-shell');
+
+var users = [
+  {
+    id: 1,
+    name: 'alice'
+  },
+  {
+    id: 2,
+    name: 'bek'
+  },
+  {
+    id: 3,
+    name: 'chris'
+  }
+]
+
+var options = {
+
+  mode: 'text',
+
+  pythonPath: '',
+
+  pythonOptions: ['-u'],
+
+  scriptPath: '',
+
+  args: ['value1', 'value2', 'value3']
+
+};
+
+
+
+
+app.get('/users', (req, res) => {
+   console.log('who get in here/users');
+   res.json(users)
+});
+
+app.post('/post', (req, res) => {
+   console.log('who get in here post /users');
+   var inputData;
+
+   req.on('data', (data) => {
+     inputData = JSON.parse(data);
+
+     PythonShell.run('test.py', options, function (err, results) {
+
+		if (err) throw err;
+
+
+  		console.log('results: %j', results);
+
+	});
+   });
+
+   req.on('end', () => {
+     console.log("user_id : "+inputData.user_id + " , name : "+inputData.name);
+   });
+
+   res.write("OK!");
+   res.end();
+});
+
+
+
+
+app.listen(3000, () => {
+  console.log('Example app listening on port 3000!');
+});
