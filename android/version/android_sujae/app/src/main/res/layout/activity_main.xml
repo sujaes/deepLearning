@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sujae.onlyyou.MainActivity">
+
+    <Button
+        android:id="@+id/b1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/b2"
+        android:layout_marginStart="67dp"
+        android:text="기능1"
+        android:textAlignment="center"
+        tools:layout_editor_absoluteX="56dp"
+        tools:layout_editor_absoluteY="129dp" />
+
+    <Button
+        android:id="@+id/b2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/b4"
+        android:layout_marginTop="109dp"
+        android:text="기능2"
+        android:textAlignment="center"
+        tools:layout_editor_absoluteX="211dp"
+        tools:layout_editor_absoluteY="129dp" />
+
+    <Button
+        android:id="@+id/b3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignStart="@+id/b1"
+        android:layout_alignTop="@+id/b4"
+        android:text="기능3"
+        android:textAlignment="center"
+        tools:layout_editor_absoluteX="56dp"
+        tools:layout_editor_absoluteY="296dp" />
+
+    <Button
+        android:id="@+id/b4"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="171dp"
+        android:layout_marginEnd="58dp"
+        android:text="기능4"
+        android:textAlignment="center"
+        tools:layout_editor_absoluteX="211dp"
+        tools:layout_editor_absoluteY="296dp" />
+</RelativeLayout>

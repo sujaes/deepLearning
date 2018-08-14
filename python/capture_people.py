@@ -34,10 +34,11 @@ while(True):
 
     for (x, y, w, h) in faces:
         print("Found {0} faces!\t".format(len(faces))+"saved\t")
-        test_img = frame[y:y+h,x:x+w] # 얼굴만 잘라내기
-        test_img = cv2.cvtColor(test_img, cv2.COLOR_BGR2GRAY)
-        test_img = cv2.resize(test_img,(48,48))
-        cv2.imwrite("./extract/me/test_img_"+str(i)+".jpg",test_img)
+        # test_img = frame[y:y+h,x:x+w] # 얼굴만 잘라내기
+        # test_img = cv2.cvtColor(test_img, cv2.COLOR_BGR2GRAY)
+        # test_img = cv2.resize(test_img,(128,128))
+        # cv2.imwrite("./temp/test_img_"+str(i)+".jpg",test_img)
+        cv2.imwrite("./temp/test_img_"+str(i)+".jpg",frame)
         i += 1
 
     if i==1000 :
